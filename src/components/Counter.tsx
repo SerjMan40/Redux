@@ -21,7 +21,7 @@ const Counter = () => {
           onClick={() => dispatch(decrement())}
         >
           Decrement
-        </button>c
+        </button>
       </div>
     </div>
   )
