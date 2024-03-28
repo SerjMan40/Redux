@@ -1,5 +1,9 @@
+import { ThunkAction } from '@reduxjs/toolkit'
 import {ActionTypes} from './actionsTypes'
-import { CounterAction } from './types'
+import { CounterAction, CounterState } from './types'
 
-export const increment = (): CounterAction => ({type: ActionTypes.INCREMENT})
-export  const decrement = (): CounterAction => ({type: ActionTypes.DECREMENT})
+export const incrementAsync = (): ThunkAction<void, CounterState, unknown, CounterAction> =>  (dispatch) =>
+ { setTimeout(() => dispatch({type: ActionTypes.INCREMENT}),1000)}
+
+export  const decrementAsync = ():ThunkAction<void, CounterState, unknown, CounterAction> =>  (dispatch) =>
+{ setTimeout(() => dispatch({type: ActionTypes.DECREMENT}),1000)}

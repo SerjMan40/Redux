@@ -1,19 +1,19 @@
 import {ActionTypes} from './actionsTypes'
 import {CounterAction, CounterState} from './types'
 
-const initialstate: CounterState = {
+export const initialState: CounterState = {
   count: 0
 }
 
 const counterReductor = (
-  state: CounterState = initialstate,
+  state: CounterState = initialState,
   action: CounterAction
 ): CounterState => {
   switch (action.type) {
     case ActionTypes.INCREMENT:
-      return {count: state.count + 1}
+      return {...state, count: state.count + 1}
     case ActionTypes.DECREMENT:
-      return {count: state.count - 1}
+      return {...state, count: state.count - 1}
     default:
       return state
   }
